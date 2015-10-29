@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<meta charset="utf-8">
+	<head>
+		<title>Voc&ecirc; j&aacute; olheu hoje GiT para sua f&eacute; hoje?</title>
+		<link type="text/css" rel="stylesheet" href="./css/stylesheet.css">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>Graphical Subnetting</h1>
+				<p>This is a browser version for my own way of teaching subnetting!</p>
+			</div>
+		</header>
+		<section>
+			<!-- Primer campo, la direccion de red -->	
+			<fieldset>
+				<legend>Direcci&oacute;n de Red</legend>
+				<fieldset id="inner-fieldset">
+				<label class="normal-label">IP de red <em>(150.186.32.0)</em></label>
+				<input name="ip_1" autofocus id='ip_1'  size="3" class="in" type="text">
+				<input name="ip_2"  id='ip_2'  size="3" class="in" type="text"> 
+				<input name="ip_3"  id='ip_3'  size="3" class="in" type="text"> 
+				<input name="ip_4"  id='ip_4'  size="3" class="in" type="text"> /
+			<!--	<input name="mask1" id="mask1"  size="3" value="0"   class="in" type="text">
+			Seccion de la msk de red -->
+	<select class="in" id="json-one">
+	<option selected value="base">--Msk Red --</option>
+	<option value="a">16</option>
+	<option value="b">17</option>
+	<option value="c">18</option>
+	<option value="d">19</option>
+	<option value="e">20</option>
+	<option value="f">21</option>
+	<option value="g">22</option>
+	<option value="h">23</option>
+	<option value="i">24</option>
+	<option value="j">25</option>
+	<option value="k">26</option>
+	<option value="l">27</option>
+	<option value="m">28</option>
+	<option value="n">29</option>
+	<option value="o">30</option>
+	<option value="p">31</option>
+</select>  
+				</fieldset>
+				<br><label class="normal-label">Informaci&oacute;n de la red:</label><br>
+				<label class="normal-label" id="una">Numero de Redes y direcciones:??</label>
+				    <br>
+					<button id="new" disabled>Check_Dir_Red</button>
+					<button id="dividal">Erase all</button>					
+               <!--<button id="dividal" disabled> Divida</button>-->
+
+			</fieldset>
+			<!-- Segundo campo, metodo -->
+			<fieldset>
+				<legend>M&eacute;todo</legend>
+				<fieldset id="inner-fieldset">
+					<label class="normal-label">Divisi&oacute;n</label>
+					<input type="radio" class="met-type" id="solid-type" name="met-type" value="FLSM">
+					<label class="radio-label" >FLSM</label>
+					<input type="radio" class="met-type" id="incr-type" name="met-type" value="VLSM">
+					<label class="radio-label" >VLSM</label>
+             </fieldset>
+			</fieldset>
+            <!-- Tercer campo, metodo -->
+			<fieldset>
+				<legend>Requisitos</legend>
+				<fieldset id="joined-fieldset">
+					<input type="radio" class="selecciona_metodo" id="solid-type" name="selecciona_metodo" value="via_msk">
+					<label class="radio-label" for="solid-type">M&aacute;scara de SR</label>
+					<input type="radio" class="selecciona_metodo" id="incr-type" name="selecciona_metodo" value="via_req">
+					<label class="radio-label" for="incr-type">Cantidad de direcciones</label>
+             </fieldset>
+				<br>
+				<fieldset id="mascaraSubnetting">
+					<label class="normal-label">M&aacute;scara de SR</label>
+					<select id="json-two">
+						<option>Seleccione la m&aacute;scara de SR</option>
+					</select>
+			    </fieldset>
+				<fieldset id="entradaCantidades" >
+					<label class="normal-label">N&uacute;mero de direcciones por cada SR</label><br>
+                       <div id='TextBoxesGroup'>
+	                      <div id="TextBoxDiv1">
+		                     <label class="normal-label">Red # 1 : </label><input type='textbox' id='textbox1' >
+	                      </div>
+                        </div>
+						<input type='button' value='Agregar' id='addButton'>
+						<input type='button' value='Eliminar' id='removeButton'>
+						<input type='button' value='Procesar' id='getButtonValue'>					
+
+				</fieldset>
+                <br>
+                <button id="dibuja">Esquema</button>	
+			</fieldset>
+			</fieldset>
+        </section>
+			<h2>Subnetting Area</h2>
+			    <div id="lienzo">
+					<canvas id="tela" width="1000" height="470"></canvas>
+				</div>
+
+			<h2>Network directions Resume</h2>
+			    <div id="lienzo2">
+					<canvas id="tela2" width="700" height="400"></canvas>
+				</div>	
+		<footer>
+			<div>
+				<strong>Herramienta desarrollada por: </strong>
+				<strong>Prof. Jose Pacheco - Octubre, 2015</strong>
+			</div>
+		</footer>
+		<script type="text/javascript" src="./js/tabla.js"></script>
+		<script type="text/javascript" src="./js/workingcanvas.js"></script>	
+		<script type="text/javascript" src="./js/script.js"></script>
+				
+	</body>
+</html>
