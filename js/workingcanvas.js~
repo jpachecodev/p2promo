@@ -1,0 +1,48 @@
+/*
+ Para dibujar en el canvas
+*/
+
+function dibujaLineas(canvas) {
+	var c = canvas.getContext('2d');
+	c.beginPath();
+	c.moveTo(0, 40);
+	c.lineTo(240, 40);
+	c.moveTo(260, 40);
+	c.lineTo(500, 40);
+	c.moveTo(495, 35);
+	c.lineTo(500, 40);
+	c.lineTo(495, 45);
+	c.strokeStyle = '#8f9814';
+	c.stroke();
+}
+
+function dibujaLimites(canvas, posx,posy) {
+	var c = canvas.getContext('2d');
+	var posPrimera = posx - 72;
+	var alturaPelota = posy - 22;
+	var posUltima = posx + 72;
+	var posBC     = posx + 28;
+	var radioLimites = 20;
+
+	// Primer circulo
+	c.beginPath();
+	c.arc(posPrimera,alturaPelota,radioLimites,0,2*Math.PI,true);
+	c.strokeStyle = 'navy';
+        c.lineCap ='square';	
+ 	c.stroke();
+
+	// Segundo circulo
+	c.beginPath();	
+	c.arc(posUltima,alturaPelota,radioLimites,0,2*Math.PI,true);	
+	c.strokeStyle = 'black';
+    c.lineCap ='square';	
+	c.stroke();		 
+
+	// Tercer circulo
+	c.beginPath();	
+	c.arc(posBC,alturaPelota,radioLimites,0,2*Math.PI,true);	
+	c.strokeStyle = 'red';
+    c.lineCap ='square';	
+	c.stroke();		 
+	
+}

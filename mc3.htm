@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id="Description">MSK_16 bits</title>
+    <meta name="description" content="This sample demonstrates how we can bind jQWidgets DataTable widget to local Data by using jQWidgets DataAdapter plugin.">
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script> 
+    <script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdatatable.js"></script>
+    <script type="text/javascript" src="../../scripts/demos.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // prepare the data
+            var data = new Array();
+
+            var cidr =
+            [
+                "/16", "/17", "/18", "/19", "/20", "/21", "/22", "/23", "/24", "/25", "/26", "/27", "/28", "/29", "/30", "/31", "/32"
+            ];
+
+            var bits =
+            [
+                "1111 1111|1111 1111|0000 0000|0000 0000",
+                "1111 1111|1111 1111|1000 0000|0000 0000",
+                "1111 1111|1111 1111|1100 0000|0000 0000",
+                "1111 1111|1111 1111|1110 0000|0000 0000",
+                "1111 1111|1111 1111|1111 0000|0000 0000",
+                "1111 1111|1111 1111|1111 1000|0000 0000",
+                "1111 1111|1111 1111|1111 1100|0000 0000", 
+                "1111 1111|1111 1111|1111 1110|0000 0000",
+                "1111 1111|1111 1111|1111 1111|0000 0000",
+                "1111 1111|1111 1111|1111 1111|1000 0000",
+                "1111 1111|1111 1111|1111 1111|1100 0000",
+                "1111 1111|1111 1111|1111 1111|1110 0000",
+                "1111 1111|1111 1111|1111 1111|1111 0000",
+                "1111 1111|1111 1111|1111 1111|1111 1000",
+                "1111 1111|1111 1111|1111 1111|1111 1100",
+                "1111 1111|1111 1111|1111 1111|1111 1110",
+                "1111 1111|1111 1111|1111 1111|1111 1111"
+            ];
+
+            var decimal =
+            [
+		"255.255.0.0",
+		"255.255.128.0",
+		"255.255.192.0",
+		"255.255.224.0",
+		"255.255.240.0",
+		"255.255.248.0",
+		"255.255.252.0",
+		"255.255.254.0",
+		"255.255.255.0",
+		"255.255.255.128",
+		"255.255.255.192",
+		"255.255.255.224",
+		"255.255.255.240",
+		"255.255.255.248",
+		"255.255.255.252",
+		"255.255.255.254",
+		"255.255.255.255"
+            ];
+
+            var numHost =
+            [
+                "65.536", "37.768", "16.384", "8.192", "4.096", "2.048", "1.024", "512", "256", "128", "64", "32", "16", "8", "4", "2", "1"
+            ];
+
+
+
+            for (var i = 0; i < numHost.length; i++) {
+                var row = {};
+
+                row["cidr"] = cidr[i];
+                row["bits"] = bits[i];
+                row["decimal"] = decimal[i];
+                row["numRedes"] = numHost[numHost.length - i - 1];
+                row["numHost"] = numHost[i];
+
+                data[i] = row;
+            }
+
+            var source =
+            {
+                localData: data,
+                dataType: "array",
+                dataFields:
+                [
+                    { name: 'cidr', type: 'string' },
+                    { name: 'bits', type: 'string' },
+                    { name: 'decimal', type: 'string' },
+                    { name: 'numRedes', type: 'number' },
+                    { name: 'numHost', type: 'string' },
+                ]
+            };
+
+            var dataAdapter = new $.jqx.dataAdapter(source);
+       
+            $("#table").jqxDataTable(
+            {
+                width: 660,
+                pageable: false,
+                source: dataAdapter,
+                columnsResize: false,
+                columns: [
+                  { text: 'CIDR', dataField: 'cidr', width: 50,cellsAlign: 'center', align: 'center' },
+                  { text: 'BITS', dataField: 'bits', width: 260,cellsAlign: 'center', align: 'center' },
+                  { text: 'Decimal Valor', dataField: 'decimal', width: 180, cellsAlign: 'center', align: 'center' },
+                  { text: 'Num Redes', dataField: 'numRedes', width: 80, cellsAlign: 'right', align: 'right' },
+                  { text: 'Num Hosts', dataField: 'numHost', width: 90, cellsAlign: 'right', align: 'right'  }
+                ]
+            });
+        });
+    </script>
+</head>
+<body class='default'>
+    <div id="table">
+    </div>
+</body>
+</html>
+
+
+

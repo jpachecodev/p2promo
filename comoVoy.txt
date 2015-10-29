@@ -1,0 +1,6 @@
+--------------------------------------------------------------------
+04.09.2015 19:18:43
+Encontre un bug, colocando direccion 190.170.116.224 y la msk 22
+la evalua como direccion de red!!!! reparar o revisar esto
+Status: Abierto
+--------------------------------------------------------------------

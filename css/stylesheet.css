@@ -1,0 +1,323 @@
+/* Cascading style sheet
+Adaptada del trabajo de: Ricardo Villegas, CPI, January 2015
+
+/*
+====================
+ Default CSS reset 
+====================
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+====================
+ Typography
+====================
+*/
+
+body {
+	font-family: Times;
+}
+
+h1, h2{
+	color: #5A7A73;
+	text-align: center;
+}
+
+h1 {
+	font-size: 42px;
+	line-height:44px;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 22px;
+	line-height:30px;
+}
+
+p {
+	text-align: center;
+	color: #000;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em{
+	font-style: italic;
+}
+
+legend {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*
+====================
+ Header
+====================
+*/
+
+header > div {
+	padding-top: 10px;
+	height: 110px;
+	background: -webkit-linear-gradient(#bbb, #ddd); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#bbb, #ddd); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#bbb, #ddd); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#bbb, #ddd); /* Standard syntax */
+	border-bottom: 2px solid black;
+}
+
+h1{
+	margin-bottom: 10px;
+}
+
+h2{
+	margin: 15px auto 0;
+}
+
+/*
+====================
+ Footer
+====================
+*/
+
+footer > div {
+	height: 35px;
+	background-color: #bbb;
+	border-top: 2px solid black;
+	padding-right: 20px;
+	text-align: right;
+	line-height:35px;
+}
+
+#photo {
+	position: relative;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin: 0 5px;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+
+/*
+====================
+ UI Elements
+====================
+*/
+
+body {
+  background-color: #eee;
+}
+
+fieldset {
+	width: 820px;
+	position: relative;
+	margin: 20px auto 10px;
+	padding: 10px 0;
+	border: 2px solid gray;
+	border-radius: 5px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#inner-fieldset {
+	display: inline-block;
+	position: relative;
+	width: 450px;
+	margin: 0;
+	padding: 15px 0;
+	background-color: #f8f8f8;
+	border: 1px solid gray;
+}
+
+#joined-fieldset, #entradaCantidades, #mascaraSubnetting  {
+	display: inline-block;
+	position: relative;
+	width: 450px;
+	margin: 10px auto 10px;
+	padding: 15px 0;
+	background-color: #E0E4F2;
+	border: 1px solid gray;
+}
+
+legend {
+	padding: 0 10px;
+}
+
+button {
+	padding: 5px 10px;
+	border-radius: 10px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#clear {
+	position: relative;
+	margin-right: 20px;
+}
+
+#canvas-size {
+	position: relative;
+	width: 12%;
+	height: 50%;
+	margin: 0 5px;
+	position: relative;
+	left: 0;
+	font-size: 14px;
+}
+
+#network-octet {
+	position: relative;
+	width: 12%;
+	height: 50%;
+	margin: 0 5px;
+	position: relative;
+	left: 0;
+	font-size: 14px;
+}
+
+#new {
+	position: relative;
+	margin-left: 20px;
+	margin-right: 15px;
+}
+
+#show-div {
+	position: relative;
+	margin-left: 10px;
+}
+
+label[for="pen-type"]{
+	margin-right: 20px;
+}
+
+.radio-label {
+	font-size: 12px;
+}
+
+.normal-label {
+	font-size: 13px;
+}
+
+.pen-type {
+	margin-left: 15px;
+}
+
+.met-type {
+	margin-left: 15px;
+}
+
+#pen-color {
+	position: relative;
+	margin-left: 50px;
+	margin-right: 10px;
+	padding: 0;
+	top: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+/*
+====================
+ Sketch canvas 850px #CCDEE4
+====================
+*/
+#lienzo {
+	padding: 0;
+	position: relative;
+	margin: 5px auto 20px;
+	width: 1030px;
+	height: 400px;
+	border: 2px groove #123B12;
+	background-color: #CCDEE4;	 	
+    overflow: auto;
+}
+
+#lienzo2 {
+	padding: 0;
+	position: relative;
+	margin: 5px auto 20px;
+	width: 700px;
+	height: 150px;
+	border: 2px groove #123B12;
+	background-color: #FFFFFF;	 	
+}
+
+#container {
+	padding: 0;
+	position: relative;
+	margin: 5px auto 20px;
+	width: 1000px;
+	height: 400px;
+	border: 2px groove red;
+	background-color: #CCDEE4; 	
+}
+
+.row-first-cell {
+	clear: both;
+}
+
+.outlined-cell {
+	outline: 1px solid black;
+}
+
+input.in {  background-color:#ddff33; }
+
+#cajon, #textbox1,#textbox2, #textbox3, #textbox4,
+#textbox5, #textbox6, #textbox7,#textbox8, #textbox9, #textbox10  {
+  background-color:#B0F75D;
+  width: 45px;  
+}

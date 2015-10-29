@@ -1,0 +1,12 @@
+Para sincronizar en la casa
+Desde el pen hacia la carpeta de desarrollo
+rsync -rvuc /run/media/jpacheco/JOSEPACHECO/PromotionalWork /home/jpacheco/referencia/JS/PromotionalWork
+rsync -rvuc /home/jpacheco/referencia/JS/PromotionalWork /run/media/jpacheco/JOSEPACHECO/PromotionalWork
+
+Para sincronizar mis clases de Cisco NUEVA VISION ---
+
+rsync -rvuc /home/jpacheco/docencia/Cisco/NUEVA_VISION/ /run/media/jpacheco/JOSEPACHECO/NUEVA_VISION/
+
+
+
+
