@@ -1,5 +1,5 @@
 //* **************************************
-// Otra linea
+// Otra linea 2*1500
 // Script file for the SketchPad page
 //***************************************
 
@@ -312,7 +312,8 @@ $(document).ready(function() {
 		console.log("******** El alto del canvas sera [170]:", dimensionado);
         console.log("******** Cantidad de redes=", calculo.n);
         console.log("******** Cantidad de direcciones=", calculo.m);
-        console.log("******** La base de esta msk es= ", calculo.t)
+        console.log("******** La base de esta msk es= ", calculo.t);
+        console.log("**OK, VALS"+vals+" ...y calculo:"+calculo);
         console.log("********************************************");      
 		var numOfColumnsToShow = calculo.n / 8;
 		var numOfNetworksToShow = 8;
