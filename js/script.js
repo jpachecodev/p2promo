@@ -313,7 +313,7 @@ $(document).ready(function() {
         console.log("******** Cantidad de redes=", calculo.n);
         console.log("******** Cantidad de direcciones=", calculo.m);
         console.log("******** La base de esta msk es= ", calculo.t);
-        console.log("**OK, VALS"+vals+" ...y calculo:"+calculo);
+        console.log("**OK, VALS "+vals+" ...y calculo:"+calculo);
         console.log("********************************************");      
 		var numOfColumnsToShow = calculo.n / 8;
 		var numOfNetworksToShow = 8;
@@ -338,15 +338,16 @@ $(document).ready(function() {
     			var r = cam.penultimo_octeto[cont] + "." + cam.ultimo_octeto[cont];
                 writeNetwork(canvas, "." + r, coordenadasX[j],coordenadasY);
 				writeNetworkInternalValues(canvas, cam.ultimo_octeto[cont], coordenadasX[j],coordenadasY,calculo.m);
-                veca.push(cont);      // numero de subred
-                veca.push(calculo.m); // cantidad de direcciones requeridas
-                veca.push(calculo.m); // cantidad de direcciones ajustadas
-                veca.push(parseInt(cam.ultimo_octeto[cont])); // direccion de red
-                veca.push(parseInt(cam.ultimo_octeto[cont])+1); // primera direccion
-                veca.push(parseInt(cam.ultimo_octeto[cont])+ calculo.m - 2); //penultima dir
-                veca.push(parseInt(cam.ultimo_octeto[cont])+ calculo.m - 1); //ultima dir
-                veca.push(toDecimal(mascara_a_bits(calculo.t)));
-                console.log("VECA:"+veca[0]+"#"+veca[1]+"#"+veca[2]+"#"+veca[3]+"#"+veca[4]+"#"+veca[5]+"#"+veca[6]+"#"+veca[7]);
+                console.log("entro al loop de las redes, veca tiene "+ veca.length +" elem");
+                veca[0] = cont;      // numero de subred
+                veca[1] = calculo.m; // cantidad de direcciones requeridas
+                veca[2] = calculo.m; // cantidad de direcciones ajustadas
+                veca[3] = cam.ultimo_octeto[cont]; // direccion de red
+                veca[4] = parseInt(cam.ultimo_octeto[cont])+1; // primera direccion
+                veca[5] = parseInt(cam.ultimo_octeto[cont])+ calculo.m - 2; //penultima dir
+                veca[6] = parseInt(cam.ultimo_octeto[cont])+ calculo.m - 1; //ultima dir
+                veca[7] = vals[0];
+                fillTabla(veca,65+(cont*14)); 
                 console.log("Valor cam.ultimo:", cam.ultimo_octeto[cont]+"#### " + calculo.m + "Cont:"+cont);
                 cont++;
 			}
@@ -370,7 +371,7 @@ $(document).ready(function() {
 		writeMessage(canvas,valeto,100,48);
        // fin de la actividad en el canvas
        // Inicio de la actividad en la tabla resumen de resultados
-        fillTabla(positionX, 65);
+        //fillTabla(positionX, 65);
 	});
 });
 
