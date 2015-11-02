@@ -342,13 +342,15 @@ $(document).ready(function() {
                 veca[0] = cont;      // numero de subred
                 veca[1] = calculo.m; // cantidad de direcciones requeridas
                 veca[2] = calculo.m; // cantidad de direcciones ajustadas
-                veca[3] = cam.ultimo_octeto[cont]; // direccion de red
-                veca[4] = parseInt(cam.ultimo_octeto[cont])+1; // primera direccion
-                veca[5] = parseInt(cam.ultimo_octeto[cont])+ calculo.m - 2; //penultima dir
-                veca[6] = parseInt(cam.ultimo_octeto[cont])+ calculo.m - 1; //ultima dir
-                veca[7] = vals[0];
-                fillTabla(veca,65+(cont*14)); 
-                console.log("Valor cam.ultimo:", cam.ultimo_octeto[cont]+"#### " + calculo.m + "Cont:"+cont);
+                veca[3] =  cam.penultimo_octeto[cont]+"."+cam.ultimo_octeto[cont]; // direccion de red
+                var t1 = parseInt(cam.ultimo_octeto[cont])+1; 
+                veca[4] = "."+ t1 // primera direccion
+                t1 = parseInt(cam.ultimo_octeto[cont])+ calculo.m - 2;         
+                veca[5] = "."+ t1 //penultima dir
+                t1 = parseInt(cam.ultimo_octeto[cont])+ calculo.m - 1; 
+                veca[6] = "."+ t1 //ultima dir
+                veca[7] = "/"+vals[0];
+                fillTabla(veca,65+(cont*17)); 
                 cont++;
 			}
 		}

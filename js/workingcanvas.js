@@ -8,7 +8,7 @@ const datosCabecera = ["No.", "Num dir.", "Num. dir.", "Direccion", "Primera", "
 const fuenteHeader = 'Bold 9pt Calibri';
 const fuenteHeader2 = '7pt Calibri';
 const fuenteNormal = '9pt Times';
-const positionX = [28,68,133,193,283,373,463,553]; // Posicion de cada dato de tabla resumen
+const positionX = [28,75,142,202,310,393,473,573]; // Posicion de cada dato de tabla resumen
 const LINECOLOR = 'black';
 
 function dibujaLineasHoriz(canvas, xini, yini, xfin, ancho) {
@@ -224,9 +224,12 @@ function dimensionaCanvas(tam_red) {
 
 function fillTabla(fila, separador) {
   var canvas2 = document.getElementById("tela2");
+  dibujaLineasHoriz(canvas2, 20, separador + 2, 642, separador + 2,2);
   for (var j = 0; j < 8 ; j++) {
     writeTableRow(canvas2,fuenteNormal, fila[j],positionX[j],separador); 
   }
+
+
 }
 
 function colocaCabeceraTabla() {
